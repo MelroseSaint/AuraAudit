@@ -1,15 +1,11 @@
 'use client'
-import { useIdentity } from '@/hooks/useIdentity'
 import { Shield } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 
 export default function IdentityHealthMetrics() {
-  const { identity, reputationScore, isLoading, error } = useIdentity()
-
-  if (isLoading) return <div className="text-muted-foreground">Loading metrics...</div>
-  if (error) return <div className="text-destructive">Error loading metrics</div>
+  const reputationScore = 85
 
   return (
     <Card>

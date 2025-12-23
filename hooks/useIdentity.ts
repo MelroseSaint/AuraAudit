@@ -1,6 +1,6 @@
 export function useIdentity() {
-  const identity = null
-  const reputationScore = 0
+  const identity = { name: 'Demo User', title: 'Developer', score: 85 }
+  const reputationScore = 85
   const isLoading = false
   const error = null
 

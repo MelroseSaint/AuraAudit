@@ -15,7 +15,9 @@ type AuditResult = {
 }
 
 export default function AuditStreamingList() {
-  const audits: AuditResult[] = []
+  const audits: AuditResult[] = [
+    { id: '1', severity: 'high', title: 'SQL Injection Risk', description: 'Potential SQL injection vulnerability detected in user input handling', category: 'Security', status: 'pending', timestamp: Date.now() }
+  ]
   const isLoading = false
   const error = null
 

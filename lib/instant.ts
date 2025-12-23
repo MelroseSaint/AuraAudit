@@ -1,7 +1,8 @@
 import { init } from '@instantdb/react'
 
-export const db = init({
+const instant = init({
   appId: process.env.NEXT_PUBLIC_INSTANTDB_APP_ID!,
 })
 
-export const auth = db.auth
+export const db = instant
+export const auth = instant.auth
