@@ -4,9 +4,35 @@
   "description": "Autonomous coding audit framework with AI-powered code analysis",
   "type": "module",
   "scripts": {
-    "dev": "cd Auto-Claude/auto-claude-ui && npm run dev",
-    "build": "cd Auto-Claude/auto-claude-ui && npm run build",
-    "start": "npm run dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npm run dev",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "@clerk/nextjs": "^5.0.0",
+    "@instantdb/react": "^0.15.7",
+    "@radix-ui/react-progress": "^1.0.0",
+    "@radix-ui/react-slot": "^1.0.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.400.0",
+    "tailwind-merge": "^2.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^15.0.0"
   },
   "keywords": ["audit", "code-analysis", "ai", "automation", "claude"],
   "author": "MelroseSaint",

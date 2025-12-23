@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 import './globals.css'
+import IdentitySeed from '@/components/IdentitySeed'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,7 +21,10 @@ export const metadata = {
     default: 'AuraAudit - AI-Powered Code Audit Platform',
     template: '%s | AuraAudit',
   },
-  description: 'Autonomous coding audit framework with AI-powered code analysis. Real-time code insights, security scanning, and quality metrics.',
+  description: 'Autonomous coding audit framework with AI-powered code analysis.',
+  other: {
+    'google-site-verification': 'YOUR_VERIFICATION_CODE',
+  },
   keywords: ['audit', 'code-analysis', 'ai', 'automation', 'security', 'code-review'],
   authors: [{ name: 'AuraAudit' }],
   openGraph: {
@@ -68,6 +72,7 @@ export default function RootLayout({
       <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <body className="min-h-screen bg-background font-sans antialiased">
           {children}
+          <IdentitySeed profile={{ name: 'Your Name', title: 'Developer', verifiedBio: 'Trusted code auditor', id: 'default' }} />
         </body>
       </html>
     </ClerkProvider>
