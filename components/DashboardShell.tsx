@@ -5,6 +5,7 @@ import { LayoutDashboard, FileText, Settings, User, Shield, Zap } from 'lucide-r
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { UserButton } from '@clerk/nextjs'
+import InstantAuthSync from '@/lib/instantdb'
 
 const navItems = [
   { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
