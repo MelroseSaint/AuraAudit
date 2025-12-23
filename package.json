@@ -15,9 +15,5 @@
   },
   "keywords": ["audit", "code-analysis", "ai", "automation", "claude"],
   "author": "MelroseSaint",
-  "license": "AGPL-3.0",
-  "engines": {
-    "node": "18.12.0",
-    "python": ">=3.8.0"
-  }
+  "license": "AGPL-3.0"
 }

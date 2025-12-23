@@ -5,6 +5,7 @@
   "buildCommand": "cd Auto-Claude/auto-claude-ui && npm run build:web",
   "outputDirectory": "Auto-Claude/auto-claude-ui/dist",
   "installCommand": "cd Auto-Claude/auto-claude-ui && npm install",
+  "framework": null,
   "headers": [
     {
       "source": "/(.*)",
