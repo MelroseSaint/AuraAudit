@@ -1,7 +1,6 @@
 'use client'
-import { db } from '@/lib/instant'
-import { useQuery } from '@instantdb/react'
-import { Shield, AlertTriangle, CheckCircle2, XCircle } from 'lucide-react'
+import { db, i } from '@instantdb/react'
+import { Shield, AlertTriangle, CheckCircle2 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
@@ -17,18 +16,14 @@ type AuditResult = {
 }
 
 export default function AuditStreamingList() {
-  const { isLoading, error, data } = useQuery({
-    audits: {
-      $: {
-        where: {
-          timestamp: {
-            $gte: Date.now() - 7 * 24 * 60 * 60 * 1000,
-          },
-        },
-        orderBy: {
-          timestamp: 'desc',
-        },
+  const { isLoading, error, data } = i.query.audits.getAll({
+    where: {
+      timestamp: {
+        $gte: Date.now() - 7 * 24 * 60 * 60 * 1000,
       },
+    },
+    orderBy: {
+      timestamp: 'desc',
     },
   })
 
