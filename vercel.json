@@ -1,0 +1,13 @@
+{
+  "buildCommand": "cd Auto-Claude/auto-claude-ui && pnpm install --frozen-lockfile && pnpm run build:web",
+  "installCommand": "cd Auto-Claude/auto-claude-ui && pnpm install --frozen-lockfile",
+  "outputDirectory": "Auto-Claude/auto-claude-ui/dist",
+  "framework": "vite",
+  "functions": {},
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
