@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -11,18 +11,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'src/renderer/index.html')
+      },
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom'],
+          'ui': ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu']
+        }
       }
     }
-  },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src/renderer'),
-      '@shared': resolve(__dirname, 'src/shared'),
-      '@/lib': resolve(__dirname, 'src/renderer/lib')
-    }
-  },
-  server: {
-    port: 3000,
-    host: true
   }
-})
+});

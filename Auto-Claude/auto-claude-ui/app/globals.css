@@ -1,0 +1,9 @@
+@tailwindcss/postcss
+@tailwindcss/preflight
+@tailwindcss/utilities
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+}
