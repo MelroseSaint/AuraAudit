@@ -1,10 +1,11 @@
 // Mock Electron API for web builds
-// This provides no-op implementations so the web app doesn't crash
+// This provides no-op implementations so that web app doesn't crash
 
 export const electronAPI = {
   // App updates
   getAppVersion: () => Promise.resolve('2.7.1'),
   onAppUpdateAvailable: () => () => {},
+  onAppUpdateDownloaded: () => () => {},
   onProactiveSwapNotification: () => () => {},
 
   // Project management
@@ -14,13 +15,19 @@ export const electronAPI = {
   updateProjectSettings: () => Promise.reject(new Error('Not available in web')),
   createProjectFolder: () => Promise.reject(new Error('Not available in web')),
 
-  // Task progress
+  // Task progress and errors
   onTaskProgress: () => () => {},
+  onTaskError: () => () => {},
 
   // Other common Electron APIs
   saveRoadmap: () => Promise.reject(new Error('Not available in web')),
   openExternal: () => {},
-  showItemInFolder: () => {}
+  showItemInFolder: () => {},
+
+  // Agent IPC
+  runAgent: () => Promise.reject(new Error('Not available in web')),
+  stopAgent: () => Promise.reject(new Error('Not available in web')),
+  getAgentStatus: () => Promise.resolve({ status: 'idle' })
 }
 
 // Make available globally like Electron preload does
