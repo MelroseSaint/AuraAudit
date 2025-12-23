@@ -2,49 +2,22 @@
   "name": "auraudit",
   "version": "1.0.0",
   "description": "Autonomous coding audit framework with AI-powered code analysis",
-  "main": "Auto-Claude/auto-claude-ui/src/main.ts",
-  "type": "module",
   "scripts": {
-    "dev": "cd Auto-Claude/auto-claude-ui && pnpm run dev",
-    "build": "cd Auto-Claude/auto-claude-ui && pnpm run build",
-    "preview": "cd Auto-Claude/auto-claude-ui && pnpm run preview",
+    "dev": "cd Auto-Claude/auto-claude-ui && npm run dev",
+    "build": "cd Auto-Claude/auto-claude-ui && npm run build:web",
+    "preview": "cd Auto-Claude/auto-claude-ui && npm run preview:web",
     "test": "cd Auto-Claude && python -m pytest tests/ -v",
-    "test:ui": "cd Auto-Claude/auto-claude-ui && pnpm test",
-    "lint": "cd Auto-Claude/auto-claude-ui && pnpm run lint",
-    "lint:fix": "cd Auto-Claude/auto-claude-ui && pnpm run lint:fix",
-    "type-check": "cd Auto-Claude/auto-claude-ui && pnpm run type-check",
-    "start": "pnpm run dev"
+    "test:ui": "cd Auto-Claude/auto-claude-ui && npm test",
+    "lint": "cd Auto-Claude/auto-claude-ui && npm run lint",
+    "lint:fix": "cd Auto-Claude/auto-claude-ui && npm run lint:fix",
+    "type-check": "cd Auto-Claude/auto-claude-ui && npm run typecheck",
+    "start": "npm run dev"
   },
   "keywords": ["audit", "code-analysis", "ai", "automation", "claude"],
   "author": "MelroseSaint",
   "license": "AGPL-3.0",
-  "dependencies": {
-    "next": "^16.1.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "typescript": "^5.9.3",
-    "tailwindcss": "^4.1.18",
-    "lucide-react": "^0.562.0",
-    "zod": "^4.2.1",
-    "zod-validation-error": "^4.0.2",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.4.0",
-    "styled-jsx": "^5.1.6",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "typescript-eslint": "^8.50.1"
-  },
   "engines": {
-    "node": ">=18.0.0",
+    "node": "18.12.0",
     "python": ">=3.8.0"
   }
 }
