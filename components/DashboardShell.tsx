@@ -16,7 +16,7 @@ const navItems = [
 
 export default function DashboardShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  
+
   return (
     <div className="flex h-screen bg-background">
       <aside className="w-64 border-r border-border bg-card/50 backdrop-blur-sm">
@@ -57,9 +57,6 @@ export default function DashboardShell({ children }: { children: React.ReactNode
             <UserButton afterSignOutUrl="/" />
             <div className="flex flex-col">
               <span className="text-sm font-medium">Account</span>
-              <Link href="/dashboard/settings" className="text-xs text-muted-foreground hover:text-foreground">
-                Settings
-              </Link>
             </div>
           </div>
         </div>

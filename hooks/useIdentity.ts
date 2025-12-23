@@ -1,16 +1,8 @@
-import { i } from '@instantdb/react'
-
 export function useIdentity() {
-  const { isLoading, error, data } = i.useQuery({
-    identities: {
-      where: {
-        id: i.auth.userId(),
-      },
-    },
-  })
-
-  const identity = data?.identities?.[0]
-  const reputationScore = identity?.score ?? 0
+  const identity = null
+  const reputationScore = 0
+  const isLoading = false
+  const error = null
 
   return { identity, reputationScore, isLoading, error }
 }

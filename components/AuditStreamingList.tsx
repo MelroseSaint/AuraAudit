@@ -1,5 +1,4 @@
 'use client'
-import { i } from '@instantdb/react'
 import { Shield, AlertTriangle, CheckCircle2 } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -16,18 +15,9 @@ type AuditResult = {
 }
 
 export default function AuditStreamingList() {
-  const { isLoading, error, data } = i.useQuery({
-    audits: {
-      where: {
-        timestamp: {
-          $gte: Date.now() - 7 * 24 * 60 * 60 * 1000,
-        },
-      },
-      orderBy: {
-        timestamp: 'desc',
-      },
-    },
-  })
+  const audits: AuditResult[] = []
+  const isLoading = false
+  const error = null
 
   if (isLoading) {
     return <div className="text-muted-foreground">Loading audits...</div>
@@ -41,8 +31,6 @@ export default function AuditStreamingList() {
       </div>
     )
   }
-
-  const audits = data?.audits as AuditResult[] || []
 
   const severityStats = audits.reduce(
     (acc, audit) => {
